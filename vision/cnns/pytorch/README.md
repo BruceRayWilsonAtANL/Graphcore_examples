@@ -37,18 +37,21 @@ To see the list of available models use `--help`
 2. Install the apt dependencies for Ubuntu 18.04 (requires admin privileges):
 
 ```console
+# Skip
 sudo apt install $(< required_apt_packages.txt)
 ```
 
 3. (Optional) Install turbojpeg. This step is required for the optimal performance. TurboJPEG helps to eliminate host side bottlenecks due to improved jpeg decode performance.
 
 ```console
+# TODO
 make install-turbojpeg
 ```
 
 4. Install the pip dependencies and download sample images for inference. These installations are handled by running the provided makefile:
 
    ```console
+   # TODO
    make install
    ```
 
@@ -73,7 +76,6 @@ The commands executed by make install are:
 Note: pretrained models are used for inference. The weights are downloaded from the following places:
 * The official PyTorch model storage
 * [PyTorch Image Models](https://github.com/rwightman/pytorch-image-models) package's model storage
-
 
 ### Running the tests
 
