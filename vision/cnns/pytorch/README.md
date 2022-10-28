@@ -1,5 +1,4 @@
-PyTorch CNN reference application on IPUs
----
+# PyTorch CNN reference application on IPUs
 
 ## Overview
 
@@ -7,6 +6,7 @@ Run CNN inference or training on Graphcore IPUs using PyTorch.
 Look in the subfolders inference, datasets and train to learn how to use these scripts.
 
 The following models are supported:
+
 1. ResNet50 (`--model resnet50`)
 2. EfficientNet-B0, B4 (`--model efficientnet-b0`)
 
