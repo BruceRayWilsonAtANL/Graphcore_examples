@@ -68,12 +68,13 @@ The MakeFile includes seven options:
 The commands executed by make install are:
 
 ```console
-	pip install -r requirements.txt
-	pip uninstall pillow -y
-	CC="cc -mavx2" pip install --no-cache-dir -U --force-reinstall pillow-simd
+pip install -r requirements.txt
+pip uninstall pillow -y
+CC="cc -mavx2" pip install --no-cache-dir -U --force-reinstall pillow-simd
 ```
 
 Note: pretrained models are used for inference. The weights are downloaded from the following places:
+
 * The official PyTorch model storage
 * [PyTorch Image Models](https://github.com/rwightman/pytorch-image-models) package's model storage
 
