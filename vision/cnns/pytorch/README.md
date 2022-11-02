@@ -34,24 +34,34 @@ To see the list of available models use `--help`
    Getting Started guide for your IPU system. Make sure to source the
    `enable.sh` scripts for Poplar and PopART and activate a Python virtualenv with PopTorch installed.
 
+```bash
+homes
+ssh gc-poplar-02.ai.alcf.anl.gov
+
+cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples
+source setuppoptorch_30.sh
+```
+
 2. Install the apt dependencies for Ubuntu 18.04 (requires admin privileges):
 
 ```console
-# Skip
+# TODO
 sudo apt install $(< required_apt_packages.txt)
 ```
 
 3. (Optional) Install turbojpeg. This step is required for the optimal performance. TurboJPEG helps to eliminate host side bottlenecks due to improved jpeg decode performance.
 
-```console
+```bash
 # TODO
+cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch
 make install-turbojpeg
 ```
 
 4. Install the pip dependencies and download sample images for inference. These installations are handled by running the provided makefile:
 
-   ```console
+   ```bash
    # TODO
+   cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch
    make install
    ```
 
@@ -67,10 +77,19 @@ The MakeFile includes seven options:
 
 The commands executed by make install are:
 
+```bash
+cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch
+```
+
 ```console
 pip install -r requirements.txt
 pip uninstall pillow -y
 CC="cc -mavx2" pip install --no-cache-dir -U --force-reinstall pillow-simd
+```
+
+```bash
+cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch/train
+./rn50_pod16.sh
 ```
 
 Note: pretrained models are used for inference. The weights are downloaded from the following places:

@@ -23,6 +23,31 @@ Image Classification Training Example using PyTorch
 
 The ImageNet LSVRC 2012 dataset, which contains about 1.28 million images in 1000 classes, can be downloaded from [http://www.image-net.org/download](the ImageNet website). It is approximately 150GB for the training and validation sets. Please note you need to register and request permission to download this dataset on the Imagenet website. You cannot download the dataset until ImageNet confirms your registration and sends you a confirmation email. If you do not get the confirmation email within a couple of days, contact [support@imagenet.org](ImageNet support) to see why your registration has not been confirmed. Once your registration is confirmed, go to the download site. The dataset is available for non-commercial use only. Full terms and conditions and more information are available on the [http://www.image-net.org/download](ImageNet download)
 
+```bash
+wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_train.tar
+wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar
+```
+
+```bash
+#TODOBRW
+# Do something similar but different.
+cd /lambda_stor/data/imagenet
+mkdir ILSVRC2012
+mv *tar ILSVRC2012/
+cd ILSVRC2012/
+```
+
+```bash
+# extract train data
+mkdir train && mv ILSVRC2012_img_train.tar train/ && cd train
+tar -xvf ILSVRC2012_img_train.tar
+find . -name "*.tar" | while read NAME ; do mkdir -p "${NAME%.tar}"; tar -xvf "${NAME}" -C "${NAME%.tar}"; rm -f "${NAME}"; done
+# extract validation data
+cd ../ && mkdir val && mv ILSVRC2012_img_val.tar val/ && cd val && tar -xvf ILSVRC2012_img_val.tar
+wget -qO- https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh | bash
+```
+
+
 3) Run the training:
 
 ```console
