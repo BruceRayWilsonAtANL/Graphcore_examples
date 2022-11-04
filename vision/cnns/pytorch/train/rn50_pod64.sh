@@ -28,4 +28,4 @@ poprun --vv \
                          -x PYTHONPATH \
                          -x IPUOF_VIPU_API_TIMEOUT=800 \
                          -x POPLAR_ENGINE_OPTIONS" \
-python3 train.py --config resnet50-pod64 --dataloader-worker 14 --dataloader-rebatch-size 256 $@
+python3 train.py --config resnet50-pod64 --imagenet-data-path /software/datasets/imagenet --dataloader-worker 14 --dataloader-rebatch-size 256 $@
