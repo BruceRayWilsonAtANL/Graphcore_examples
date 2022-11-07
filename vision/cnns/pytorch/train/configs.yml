@@ -9,7 +9,7 @@ resnet50: &resnet50
   optimizer: sgd_combined
   lr_schedule: cosine
   warmup_epoch: 5
-  epoch: 100
+  epoch: 20
   loss_scaling: 128
   lr_scheduler_freq: 16
   half_partial: true
