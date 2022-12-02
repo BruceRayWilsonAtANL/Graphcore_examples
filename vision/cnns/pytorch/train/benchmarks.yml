@@ -18,6 +18,69 @@ common_options: &common_options
     POPLAR_ENGINE_OPTIONS: '{"opt.enableMultiAccessCopies":"false"}'
     PYTORCH_CACHE_DIR: "./pt_cache/"
 
+pytorch_resnet50_train_real_1:
+  <<: *common_options
+  description: ResNet training on 16 Mk2 IPUs, real data.
+  cmd: >-
+    python3 train.py
+      --config resnet50
+      --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
+      --epoch 2
+      --validation-mode none
+      --dataloader-worker 14
+      --dataloader-rebatch-size 256
+
+pytorch_resnet50_train_real_2:
+  <<: *common_options
+  description: ResNet training on 16 Mk2 IPUs, real data.
+  cmd: >-
+    poprun
+      -vv
+      --num-instances=1
+      --num-replicas=2
+      --executable-cache-path=$PYTORCH_CACHE_DIR
+    python3 train.py
+      --config resnet50
+      --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
+      --epoch 2
+      --validation-mode none
+      --dataloader-worker 14
+      --dataloader-rebatch-size 256
+
+pytorch_resnet50_train_real_4:
+  <<: *common_options
+  description: ResNet training on 16 Mk2 IPUs, real data.
+  cmd: >-
+    poprun
+      -vv
+      --num-instances=2
+      --num-replicas=4
+      --executable-cache-path=$PYTORCH_CACHE_DIR
+    python3 train.py
+      --config resnet50
+      --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
+      --epoch 2
+      --validation-mode none
+      --dataloader-worker 14
+      --dataloader-rebatch-size 256
+
+pytorch_resnet50_train_real_8:
+  <<: *common_options
+  description: ResNet training on 16 Mk2 IPUs, real data.
+  cmd: >-
+    poprun
+      -vv
+      --num-instances=4
+      --num-replicas=8
+      --executable-cache-path=$PYTORCH_CACHE_DIR
+    python3 train.py
+      --config resnet50
+      --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
+      --epoch 2
+      --validation-mode none
+      --dataloader-worker 14
+      --dataloader-rebatch-size 256
+
 pytorch_resnet50_train_real_pod16:
   <<: *common_options
   description: ResNet training on 16 Mk2 IPUs, real data.
