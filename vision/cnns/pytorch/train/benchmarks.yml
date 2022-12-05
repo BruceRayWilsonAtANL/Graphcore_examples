@@ -25,7 +25,7 @@ pytorch_resnet50_train_real_1:
     python3 train.py
       --config resnet50
       --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
-      --epoch 2
+      --epoch 20
       --validation-mode none
       --dataloader-worker 14
       --dataloader-rebatch-size 256
@@ -42,7 +42,7 @@ pytorch_resnet50_train_real_2:
     python3 train.py
       --config resnet50
       --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
-      --epoch 2
+      --epoch 20
       --validation-mode none
       --dataloader-worker 14
       --dataloader-rebatch-size 256
@@ -59,7 +59,7 @@ pytorch_resnet50_train_real_4:
     python3 train.py
       --config resnet50
       --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
-      --epoch 2
+      --epoch 20
       --validation-mode none
       --dataloader-worker 14
       --dataloader-rebatch-size 256
@@ -76,7 +76,7 @@ pytorch_resnet50_train_real_8:
     python3 train.py
       --config resnet50
       --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
-      --epoch 2
+      --epoch 20
       --validation-mode none
       --dataloader-worker 14
       --dataloader-rebatch-size 256
@@ -93,7 +93,7 @@ pytorch_resnet50_train_real_pod16:
     python3 train.py
       --config resnet50
       --imagenet-data-path $DATASETS_DIR/imagenet-raw-dataset
-      --epoch 2
+      --epoch 20
       --validation-mode none
       --dataloader-worker 14
       --dataloader-rebatch-size 256
