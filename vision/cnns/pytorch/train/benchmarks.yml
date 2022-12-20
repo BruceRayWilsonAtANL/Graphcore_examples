@@ -36,7 +36,7 @@ pytorch_resnet50_train_real_2:
   cmd: >-
     poprun
       -vv
-      --num-instances=1
+      --num-instances=2
       --num-replicas=2
       --executable-cache-path=$PYTORCH_CACHE_DIR
     python3 train.py
@@ -53,7 +53,7 @@ pytorch_resnet50_train_real_4:
   cmd: >-
     poprun
       -vv
-      --num-instances=2
+      --num-instances=4
       --num-replicas=4
       --executable-cache-path=$PYTORCH_CACHE_DIR
     python3 train.py
@@ -70,7 +70,7 @@ pytorch_resnet50_train_real_8:
   cmd: >-
     poprun
       -vv
-      --num-instances=4
+      --num-instances=8
       --num-replicas=8
       --executable-cache-path=$PYTORCH_CACHE_DIR
     python3 train.py
@@ -87,7 +87,7 @@ pytorch_resnet50_train_real_pod16:
   cmd: >-
     poprun
       -vv
-      --num-instances=8
+      --num-instances=16
       --num-replicas=16
       --executable-cache-path=$PYTORCH_CACHE_DIR
     python3 train.py

@@ -38,7 +38,7 @@ To see the list of available models use `--help`
 homes
 ssh gc-poplar-02.ai.alcf.anl.gov
 
-cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples
+cd ~/DL/github.com/BruceRayWilsonAtANL/Graphcore_examples
 source setuppoptorch_30.sh
 ```
 
@@ -53,7 +53,7 @@ sudo apt install $(< required_apt_packages.txt)
 
 ```bash
 # TODO
-cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch
+cd ~/DL/github.com/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch
 make install-turbojpeg
 ```
 
@@ -61,7 +61,7 @@ make install-turbojpeg
 
    ```bash
    # TODO
-   cd ~/DL/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch
+   cd ~/DL/github.com/BruceRayWilsonAtANL/Graphcore_examples/vision/cnns/pytorch
    make install
    ```
 
